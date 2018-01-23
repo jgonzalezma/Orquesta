@@ -1,6 +1,7 @@
 package paquete;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Orquesta {
 	String nombre;
@@ -47,7 +48,13 @@ public class Orquesta {
 	}
 	public ArrayList<Instrumento> getDeTipo(String tipo){
 		return instrumentos;
-		
+	}
+	public void mostrarInfo(){
+		Iterator<Instrumento> i = instrumentos.iterator();
+		while(i.hasNext()){
+			Instrumento instrumentos = i.next();
+			mostrarInfo();
+		}
 	}
 	
 	
