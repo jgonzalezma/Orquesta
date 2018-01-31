@@ -46,7 +46,16 @@ public class Orquesta {
 	public void setInstrumentos(ArrayList<Instrumento> instrumentos) {
 		this.instrumentos = instrumentos;
 	}
-	public ArrayList<Instrumento> getDeTipo(String tipo){
+	public ArrayList<Instrumento> getInstrumentoDeTipo(String tipo){
+		ArrayList<Instrumento> instrumentosDeTipo = new ArrayList<Instrumento>();
+		Iterator<Instrumento> i = this.instrumentos.iterator();
+		while(i.hasNext()){
+			Instrumento instrumento = i.next();
+			
+			if(instrumento.esDeTipo(tipo)){
+				instrumentosDeTipo.add(instrumento);
+			}
+		}
 		return instrumentos;
 	}
 	public void mostrarInfo(){
@@ -57,9 +66,26 @@ public class Orquesta {
 		}
 	}
 	
-	
-	
-	
+	public ArrayList<Instrumento> getInstrumentoTocadoPor(String musico){
+		ArrayList<Instrumento> instrumentoTocadoPor = new ArrayList<Instrumento>();
+		Iterator i = this.instrumentos.iterator();
+		while(i.hasNext()){
+			Instrumento instrumento = i.next();
+			if(instrumento.esTocadaPor(musico)){
+				instrumentoTocadoPor.add(instrumento);
+			}
+			}return instrumentoTocadoPor;
+		}
+
+
+
+
+
 }
+	
+	
+	
+
+
 
 

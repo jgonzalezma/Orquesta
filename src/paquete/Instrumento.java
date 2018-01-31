@@ -104,4 +104,17 @@ public class Instrumento implements InstrumentoMusical{
 	public String tocar() {
 		return this.nombre + " está sonando";
 	}
+	
+	boolean esDeTipo(String tipo){
+		if(this.tipo.equals(tipo)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	boolean esTocadaPor(String musico){
+		return this.musicos.contains(musico);
+		
+	}
 }
